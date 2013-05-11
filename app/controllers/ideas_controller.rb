@@ -1,6 +1,8 @@
 class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
+  before_filter :authenticate_user!
+  
   def index
     @ideas = Idea.all
 
